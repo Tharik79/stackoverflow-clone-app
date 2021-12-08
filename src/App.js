@@ -16,6 +16,7 @@ import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import './App.css';
 import { Login } from './Login';
+import { SignUp } from './SignUp';
 
 function App() {
   
@@ -74,7 +75,9 @@ function App() {
               onClick={() => history.push('/login')}
               style={{ flex: 4, align: "right" }}>Login</Button>
 
-            <Button  className="signup"  color="inherit" style={{ flex: 2, align: "right" }}>SignUp</Button>
+            <Button  className="signup"  color="inherit" 
+                onClick={() => history.push('/signup')}
+                style={{ flex: 2, align: "right" }}>SignUp</Button>
             <Button 
               startIcon={
               mode === "dark" ? <Brightness7Icon /> : <Brightness4Icon />
@@ -105,6 +108,9 @@ function App() {
 
             <Route path="/login">
               <Login/>
+            </Route>
+            <Route path="/signup">
+              <SignUp/>
             </Route>
              <Route path="**">
                 <NotFound/></Route> 
