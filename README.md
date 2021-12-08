@@ -1,6 +1,6 @@
 The links for this stackoverflow-clone-app Project below:
 
-https://stackoverflow-cloned.herokuapp.com/
+https://stackoverflow-cloned.herokuapp.com
 https://github.com/Tharik79/stackoverflow-clone-app.git
 https://kind-mirzakhani-dcb899.netlify.app
 
