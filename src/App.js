@@ -12,7 +12,10 @@ import Paper from '@mui/material/Paper';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import SearchIcon from '@mui/icons-material/Search';
+import InputBase from '@mui/material/InputBase';
+import MenuIcon from '@mui/icons-material/Menu';
 import './App.css';
+import { Login } from './Login';
 
 function App() {
   
@@ -32,24 +35,46 @@ function App() {
     <div className="App">
       
     <ThemeProvider theme={theme}>
-      <Paper elevation={4} style={ { borderRadius: "0px", minHeight: "100vh"}}>
+      <Paper elevation={1} style={ { borderRadius: "0px", minHeight: "100vh"}}>
         <div className="App">
 
         <AppBar position="static" style={{marginBottom: "30px"}}>
-          <Toolbar variant="dense">
+          <Toolbar  variant="dense">
+
+          <img src="https://stackoverflow.design/assets/img/logos/so/logo-stackoverflow.svg" alt="logo" className="logo" />
+            
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          >
+            <MenuIcon />
+          </IconButton>
+            
             <Button variant="text" color="inherit" onClick={() => history.push('/')}>
-              Home
+                  Home
             </Button>   
            {/* onClick = history.push used to replace the Link path to give URL in browser */}
 
             <Button variant="text" color="inherit" onClick={() => history.push('/userprofile')}>
-             userprofile
+             user profile
             </Button>
 
-            <Button variant="text" color="inherit" onClick={() => history.push('/questions')}>
+            <Button variant="text"  color="inherit" onClick={() => history.push('/questions')}>
               questions
             </Button>
-            <Button classname="login"   color="inherit">Login</Button>
+
+            <InputBase className="search-bar"
+              placeholder="Search…"
+              inputProps={{ 'aria-label': 'search' }}
+            />
+            <Button  className="login"  color="inherit" 
+              onClick={() => history.push('/login')}
+              style={{ flex: 4, align: "right" }}>Login</Button>
+
+            <Button  className="signup"  color="inherit" style={{ flex: 2, align: "right" }}>SignUp</Button>
             <Button 
               startIcon={
               mode === "dark" ? <Brightness7Icon /> : <Brightness4Icon />
@@ -77,6 +102,10 @@ function App() {
             <Route path="/questions">
               questions
             </Route>
+
+            <Route path="/login">
+              <Login/>
+            </Route>
              <Route path="**">
                 <NotFound/></Route> 
               {/* this ** is a special link that can matches any data given */}
@@ -90,7 +119,6 @@ function App() {
 
       </Paper>
     </ThemeProvider>  
-
             
         
     
@@ -100,7 +128,6 @@ function App() {
 }
 
 export default App;
-
 
 function Welcome(){
   return(
