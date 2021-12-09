@@ -5,7 +5,7 @@ import Badge from '@mui/material/Badge';
 import { Switch, Route } from 'react-router-dom';
 import { useHistory } from "react-router-dom";
 import Button from '@mui/material/Button';
-import { AppBar } from '@mui/material';
+import { AppBar, MenuItem } from '@mui/material';
 import Toolbar from '@mui/material/Toolbar';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
@@ -13,7 +13,10 @@ import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
+import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
+
+
 import './App.css';
 import { Login } from './Login';
 import { SignUp } from './SignUp';
@@ -39,11 +42,13 @@ function App() {
       <Paper elevation={1} style={ { borderRadius: "0px", minHeight: "100vh"}}>
         <div className="App">
 
-        <AppBar position="static" style={{marginBottom: "30px"}}>
+        <AppBar         
+            position="static" style={{marginBottom: "30px"}}>
           <Toolbar  variant="dense">
 
           <img src="https://stackoverflow.design/assets/img/logos/so/logo-stackoverflow.svg" alt="logo" className="logo" />
-            
+
+           
           <IconButton
             size="large"
             edge="start"
@@ -86,6 +91,8 @@ function App() {
               variant="text" color="inherit" onClick={() => setMode( mode === "light" ? "dark" : "light")}>
                { mode === "light" ? "dark" : "light"} mode
             </Button>
+
+           
 
           </Toolbar>
         </AppBar>  
@@ -134,6 +141,9 @@ function App() {
 }
 
 export default App;
+
+
+
 
 function Welcome(){
   return(
