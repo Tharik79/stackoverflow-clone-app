@@ -1,7 +1,6 @@
 //import logo from './logo.svg';
 import React, { useEffect, useState } from 'react';
 import IconButton from '@mui/material/IconButton';
-import Badge from '@mui/material/Badge';
 import { Switch, Route } from 'react-router-dom';
 import { useHistory } from "react-router-dom";
 import Button from '@mui/material/Button';
@@ -11,15 +10,13 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
-import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
-import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
-
-
 import './App.css';
 import { Login } from './Login';
 import { SignUp } from './SignUp';
+import { Homepage } from './Homepage';
+
 
 function App() {
   
@@ -101,7 +98,7 @@ function App() {
           <Switch>
 
             <Route exact path="/">
-              <Welcome/>
+              <Homepage/>
             </Route>
 
             
@@ -141,8 +138,6 @@ function App() {
 }
 
 export default App;
-
-
 
 
 function Welcome(){

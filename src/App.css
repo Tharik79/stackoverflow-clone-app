@@ -17,7 +17,7 @@
   border:1px solid;
   border-radius: 5px;
   border: 1px inherit ;
-  margin-left: 30px;
+  margin-left: 60px;
   width:60%;
 }
 .login-form{
@@ -37,4 +37,7 @@
   gap: 20px;
   width:30%;
   margin-left: 550px;
+}
+.imgB{
+  
 }
